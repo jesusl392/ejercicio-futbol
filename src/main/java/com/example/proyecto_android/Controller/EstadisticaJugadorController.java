@@ -47,7 +47,7 @@ public class EstadisticaJugadorController {
 
     // Consulta 3: Total de goles por equipo
     @GetMapping("/goles/equipo/{idEquipo}")
-    public Integer totalGolesPorEquipo(@PathVariable Integer idEquipo) {
+    public long totalGolesPorEquipo(@PathVariable Integer idEquipo) {
         return estadisticaJugadorService.totalGolesPorEquipo(idEquipo);
     }
 }

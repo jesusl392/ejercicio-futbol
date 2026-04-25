@@ -29,7 +29,7 @@ public class EstadisticaJugadorService {
         estadisticaJugadorRepository.deleteById(id);
     }
 
-    public Integer totalGolesPorEquipo(Integer idEquipo) {
+    public long totalGolesPorEquipo(Integer idEquipo) {
         return estadisticaJugadorRepository.totalGolesPorEquipo(idEquipo);
     }
 }

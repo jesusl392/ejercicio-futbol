@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface EstadisticaJugadorRepository extends JpaRepository<EstadisticaJugador, Integer> {
 
     // Consulta 3: Total de goles de un equipo en todos sus partidos
-    @Query(value = "SELECT SUM(e.goles) FROM estadistica_jugador e " +
+    @Query(value = "SELECT COALESCE(SUM(e.goles),0) FROM estadistica_jugador e " +
             "JOIN jugador j ON e.id_jugador = j.id_jugador " +
             "WHERE j.id_equipo = :idEquipo", nativeQuery = true)
     Integer totalGolesPorEquipo(@Param("idEquipo") Integer idEquipo);
